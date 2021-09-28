@@ -1,5 +1,7 @@
 package Java_Algorithms;
 
+import java.util.Arrays;
+
 public class Largest_SmallestElementsInArray {
 
 	public static void main(String[] args) {
@@ -19,14 +21,29 @@ public class Largest_SmallestElementsInArray {
 				smallest=num[i];
 			}
 		}
-		
-		
-		
 		System.out.println("largest " + largest);
 		System.out.println("smallest" + smallest);
 		
 		
 		
+		
+		//largets and smallest array
+		 int numbers[] = {-2, 4, 6, 19, 67, 89, 93, -78, 78};
+		 System.out.println("given array " + Arrays.toString(numbers));
+	       int largestNum = numbers[0];
+	       int smallestNum = numbers[0];
+	       
+	       for(int i=0; i<numbers.length; i++) {
+	    	   if(numbers[i]>largestNum) {
+	    		   largestNum=numbers[i];
+	    	   }
+	    	   else if(numbers[i]<smallestNum){
+	    		   smallestNum=numbers[i];
+			}
+	    	  
+	       } System.out.println("largest array  ===> " +largestNum);
+   	   System.out.println("smallest array ===> " +smallestNum);
+	       
 		
 		
 		
