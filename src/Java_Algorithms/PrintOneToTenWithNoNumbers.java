@@ -8,13 +8,14 @@ public class PrintOneToTenWithNoNumbers {
 		int one = 'A' / 'A';
 		String n = "..........";
         for (int i = one; (i <= n.length() * n.length()); i++) {
-			System.out.println(i);
+			System.out.print(i);
 		}
 
+        System.out.println();
         
         //with ascii value 
         for(int i=one; i<='d'; i++) {
-        	System.out.println(i);
+        	System.out.print(i);
         }
         
         
