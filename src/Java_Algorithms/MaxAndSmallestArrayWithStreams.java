@@ -25,6 +25,9 @@ public class MaxAndSmallestArrayWithStreams {
 	       System.out.println(Collections.min(lst));
 	       
          
+	       ArrayList<Integer> marksList = new ArrayList<Integer>(Arrays.asList(1,1,3,5,4,2,2,4,5,6,7,8,9,3));
+	       
+		
          
 	}
 	

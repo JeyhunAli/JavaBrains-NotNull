@@ -78,7 +78,12 @@ public class testing {
 	       
 	       
 	       
-	       
+    	   String ss = "Gelmishdun";
+    	   String reverse = "";
+    	   for(int i=ss.length()-1; i>=0; i--) {
+    		   reverse = reverse + ss.charAt(i);
+    	   }
+	       System.out.println(reverse);
 	}
 
 	

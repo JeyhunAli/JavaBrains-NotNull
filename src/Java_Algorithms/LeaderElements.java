@@ -5,6 +5,8 @@ public class LeaderElements {
 	/**
 	 * 
 	 * @param args
+	 * A leader in an array is an element which is greater than 
+	 * all the elements on its right side in the array.
 	 * leader elements are those elements lets say there 
 	 * 
 	 * 2,5,6,12,3,4,6,8,11,10
