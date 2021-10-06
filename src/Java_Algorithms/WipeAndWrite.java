@@ -1,6 +1,7 @@
 package Java_Algorithms;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,88 +11,120 @@ public class WipeAndWrite {
 
 	public static void main(String[] args) {
 
-		findDublicate("Who ever mentions about God That Person is my Friend");
+		int [] arr = {33, 45, 22, 1, 3, 2, 4, 6, 5, 8, 7, 11, 10 };
+		sortArray(arr);
 		
-		findPrimeNumbers(100);
+		findduplicatechar("America is great country for the craziest and inteliigent people");
 		
-		String text =reverseString("\n Love God find the way of being in peace");
-		System.out.println(text);
+		findPrimeNum(100);
 		
-		
+	}
+
+	//sort array with logic not with in build method
+	public static void sortArray(int [] arr) {
+		System.out.println("given array: " + Arrays.toString(arr));
+		int temp;
+		for(int i=0; i<arr.length; i++) {
+			for(int y=i; y<arr.length; y++) {
+				if(arr[i] > arr[y]) {
+					temp = arr[i];
+					arr[i] = arr[y];
+					arr[y] = temp;
+				}
+			}
+		}
+		System.out.println("sorted array after logic: " + Arrays.toString(arr));
+		for(Integer e: arr) {
+			System.out.print(e + " ");
+		}
 		
 	}
 	
-	
-	public static void findDublicate(String str) {
-		System.out.println("given String" + str);
+	//find repetitive char with logic
+	public static void findduplicatechar(String str) {
+		System.out.println("Given String " + str);
 		if(str==null) {
-			System.out.println("null String");
+			System.out.println("null String " +str);
 			return;
 		}
 		if(str.isEmpty()) {
-			System.out.println("empthy String" + str);
+			System.out.println("empthy String " + str);
 			return;
 		}
 		if(str.length()<=1) {
-			System.out.println("Single char ");
-			return;
+			System.out.println("single String" + str);
 		}
+		
 		char[] letters = str.toCharArray();
 		Map<Character, Integer> mapChar = new HashMap<Character, Integer>();
 		for(Character ch: letters) {
 			if(mapChar.containsKey(ch)) {
 				mapChar.put(ch, mapChar.get(ch)+1);
-				
-			}else {
+			}
+			else {
 				mapChar.put(ch, 1);
 			}
 		}
 		Set<Map.Entry<Character, Integer>> entriSet = mapChar.entrySet();
-		for(Map.Entry<Character, Integer> entry: entriSet) {
+		for(Map.Entry<Character, Integer> entry: entriSet){
 			if(entry.getValue()>1) {
-				System.out.println(entry.getKey()+ " : " + entry.getValue());
+				System.out.println(entry.getKey() + " : " + entry.getValue());
 			}
 		}
+		
 		
 	}
 	
 	
-	public static void findPrimeNumbers(int number) {
+	public static void findPrimeNum(int numbers) {
+		System.out.println("given integer numbers " + numbers);
 		
 		List<Integer> primeNumbers = new ArrayList<Integer>();
 		
-		for(int i=2; i<=number; i++) {
-			boolean isPrime= true;
+		for(int i=2; i<=numbers; i++) {
+			boolean isPrime = true;
 			for(int y=2; y<=i/2; y++) {
 				if(i%y==0) {
 					isPrime=false;
+					break;
 				}
 			}
 			if(isPrime) {
 				primeNumbers.add(i);
 			}
-			
 		}
-		System.out.println("print 1 to " + number + " Prime numbers");
-		System.out.println("primeNumbers.size is: " + primeNumbers.size());
+		System.out.println("1 to " + numbers + " prime numbers");
+		System.out.println("primeNumbers.size()" + primeNumbers.size());
 		for(Integer e: primeNumbers) {
-			System.out.print(e +" ");
+			System.out.print(e + " ");
 		}
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
-	
-	
-	
-	public static String reverseString(String s) {
-		System.out.println("given String " + s);
-		String reverse = "";
-		for(int i=s.length()-1; i>=0; i--) {
-			reverse=reverse+s.charAt(i);
-		}
-		System.out.println("reversed String " + reverse);
-		return reverse;
-	}
-
 	
 }
 	
