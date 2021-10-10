@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+
+
 public class test {
 
 	public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class test {
 		findrepetitive("azerBaijan_Dogma_Diyar");
 		primeNumberOne_TO_Hundred(60);
 		factNUMM(5);
+		find_Palindrome("race car");
 	}
 	
 	
@@ -181,7 +184,33 @@ public class test {
 		
 	}
 	
-	
+	public static void find_Palindrome(String str) {
+		
+		System.out.println("given String " + str);
+		str = str.replace(" ", "");
+		str = str.toLowerCase();
+		
+		
+		String reverse = "";
+		for(int i=str.length()-1; i>=0; i--) {
+			reverse = reverse + str.charAt(i);
+		}
+		boolean isPalindrome = true;
+		for(int i=0; i<str.length(); i++) {
+			
+			if(str.charAt(i) != reverse.charAt(i)) {
+				isPalindrome = false;
+			}
+			
+		}
+		if(isPalindrome) {
+			System.out.println("PALINDROME ...");
+		}
+		else {
+			System.out.println("not a palindrome ... ");
+		}
+		
+	}
 	
 	
 	

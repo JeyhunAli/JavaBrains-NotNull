@@ -18,6 +18,14 @@ public class WipeAndWrite {
 		
 		findPrimeNum(100);
 		
+		checkPalindrome("race car"); 
+		checkPalindrome("Mom");
+		checkPalindrome("Nurses Run");
+		System.out.println("---");
+		repetitiveWordCount("hey hey  two two ");
+		repetitiveWord_2("hey hey  hey ");
+		getrepetitiveword("choose selenium with java then u have to learn Java then selenium");
+		
 	}
 
 	//sort array with logic not with in build method
@@ -98,33 +106,171 @@ public class WipeAndWrite {
 		for(Integer e: primeNumbers) {
 			System.out.print(e + " ");
 		}
+	}
+	
+	
+	
+	public static void checkPalindrome(String str) {
+		System.out.println("given String: " + str);
+		str = str.replace(" ", "");  //because of string immutable great example
+		str = str.toLowerCase();
+		
+		String reverse = "";
+		for(int i=str.length()-1; i>=0; i--) {
+			reverse+=str.charAt(i);
+		}
+		boolean isPalindrome = true;
+		
+		for(int i=0; i<str.length(); i++) {
+			if(str.charAt(i) != reverse.charAt(i)) {
+				isPalindrome = false;
+			}
+		}
+		
+		if(isPalindrome) {
+			System.out.println("given String: "+ str +" is Palindrome");
+		}
+		else {
+			System.out.println("not a palindrome");
+		}
 		
 		
+	    }
+	
+	//repetitiveWordCount
+	public static void repetitiveWordCount(String input) {
+		input = input.toLowerCase();
+		String[] splitedwords = input.split(" ");
+		Map<String, Integer> mapWords = new HashMap<String, Integer>();
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		for(String word : splitedwords) {
+			if(mapWords.containsKey(word)) {
+				mapWords.put(word, mapWords.get(word)+1);
+			}
+			else {
+				mapWords.put(word, 1);
+			}
+			
+		}
+		Set<String> setword = mapWords.keySet();
+		for(String w: setword) {
+			if(mapWords.get(w)>1) {
+				System.out.println(w + " : " + mapWords.get(w));
+			}
+			
+		}
 		
 	}
+	//repetitiveWordCount
+	public static void repetitiveWord_2(String input) {
+		input = input.toLowerCase();
+		String[] words = input.split(" ");
+		HashMap<String, Integer> wordcount = new HashMap<String, Integer>();
+		for(String word: words) {
+			if(wordcount.containsKey(word)) {
+				wordcount.put(word, wordcount.get(word)+1);
+			}
+			else {
+				wordcount.put(word, 1);
+			}
+		
+	}
+		Set<String> wordInString = wordcount.keySet();
+		for(String word: wordInString) {
+			if(wordcount.get(word)>1) {
+				System.out.println(word + " : " + wordcount.get(word));
+				
+			}
+		}
+	}
+	
+	//repetitiveWordCount with entry set
+	public static void getrepetitiveword(String input) {
+    	 input = input.toLowerCase();
+    	String [] splittedwords = input.split(" ");
+    	Map<String, Integer> mapWords = new HashMap<String, Integer>();
+    	
+    	for(String words: splittedwords) {
+    		if(mapWords.containsKey(words)) {
+    			mapWords.put(words, mapWords.get(words)+1);
+    		}
+    		else {
+    			mapWords.put(words, 1);
+    		}
+    	}
+    	Set<Map.Entry<String, Integer>> entriSet = mapWords.entrySet();
+    	for(Map.Entry<String, Integer> entry: entriSet) {
+    		if(entry.getValue()>1) {
+    			System.out.println(entry.getKey() + " : " + entry.getValue());
+    		}
+    	}
+    	
+    	 
+     }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
 	
